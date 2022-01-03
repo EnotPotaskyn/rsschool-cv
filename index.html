@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sbroscss.css">
+    <link rel="stylesheet" href="style.css">
+    <title>CV</title>
+</head>
+
+<body>
+
+<header class="container">
+     <nav class="menu">
+        <ul class='nav-list'>
+           <li class='nav-li'><a href="#about">Aboute Me</a></li>   
+           <li class='nav-li'><a href="#skills">Skills</a></li>
+          <li class='nav-li'><a href="#education">Education</a></li>
+          <li class='nav-li'><a href="#contact">Contact</a></li>
+          <li class='nav-li'><a href="#code">Code example</a></li>
+          <li class='nav-li'><a href="#projects">Projects</a></li>
+        </ul>
+      </nav>
+</header >
+
+<main class="container">
+  
+    <div class='content-grid'>   
+
+        <div class="left">
+
+            <figure class='photo'>
+                <img src="1.jpg" alt="my photo" width="300" height="370">
+            </figure>
+
+            <section class='contact' id='contact'>
+                <h2>Contact</h2>
+                <ul>
+                    <li>Location: Minsk, Belarus</li>
+                    <li>Phone: <a href="tel:+375(29)8879295" target="_blank">+375 29 887-92-95</a></li>
+                    <li>Email: <a href="mailto:ackii@bk.ru" target="_blank">ackii@bk.ru</a></li>
+                    <li>GitHub: <a href="https://github.com/EnotPotaskyn" target="_blank">EnotPotaskyn</a> </li>
+                    <li>Discord: Евгений(@EnotPotaskyn)</li>
+                </ul>
+            </section>
+
+            <section class='education' id='education'>
+                <h2>Education</h2>
+                <ul>              
+                    <li>Baranovichi State University<br>(Faculty of Engineering)</li>
+                    <li>HTML Academy</li>  
+                    <li>RS PreSchool</li>         
+                </ul>
+            </section> 
+
+            <section class='english'>
+                <h2>English</h2>
+                <p>A2(B1 in proccess...)</p>
+            </section> 
+
+        </div>
+
+        <div class='right'>
+
+            <section class="name">
+                <h1>Evgeny<br> Usovich</h1>
+                <p>Front-End developer</p>
+            </section>
+            
+            <section class='about' id="about">
+                <h2>About Me</h2>
+                <p>I am 30 years old. I want to be Front-End Development! I like to read and collect books, solve interesting tasks and puzzles. I have good interpersonal skills, am an excellent team worker and very willing to learn and develop new skills.</p>
+            </section> 
+
+            <section class='skills' id='skills'>
+                <h2>My Skills</h2>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript (Basic)</li>
+                    <li>Git</li>
+                </ul>
+            </section>
+           
+            <section class='code' id='code'>
+                <h2>Code example</h2>
+                <div class="content_pos">
+                <a class="content_toggle" href="#">Показать текст</a>
+
+                <div class="content_block" style="display: none;">
+                    <pre><code data-language = "javascript">
+                        let makeElement = function (tagName, className, text) {
+                                let element = document.createElement(tagName);
+                                element.classList.add(className);
+                                if (text) {
+                                element.textContent = text;
+                                }
+                                return element;
+                            };
+                            let renderCards = function (good) {
+                                let listItem = makeElement('li','good')
+                                let title = makeElement('h2', 'good__description', good.text);
+                                listItem.appendChild(title);
+                                let picture = makeElement('img', 'good__image');
+                                picture.src = good.imgUrl;
+                                picture.alt = good.text;
+                                listItem.appendChild(picture);
+                            let price = makeElement('p','good__price',good.price + '₽/кг')
+                            listItem.appendChild(price);
+                            let availabilityClass = 'good--available'
+                            if(!good.inStock){
+                                availabilityClass = 'good--unavailable'
+                                }
+                                listItem.classList.add(availabilityClass);
+                                if(good.isHit){
+                                listItem.classList.add('good--hit');
+                                let specialOffer = makeElement('p', 'good__special-offer', good.specialOffer);
+                                listItem.appendChild(specialOffer);
+                                }
+                                return listItem
+                            }
+                            let cardList = document.querySelector('.goods');
+                            for (let i=0; i &#60; cardsData.length; i++) {
+                                let cardItem = renderCards(cardsData[i]);
+                                cardList.appendChild(cardItem);
+                            } 
+                        </code>
+                    </pre> 
+                </div>
+            </div>
+          </section>
+
+          <section class='projects' id="projects">
+            <h2>My Projects</h2>
+            <div class="content_pos">
+                <a class="proj" href="https://enotpotaskyn.github.io/rsschool-cv/">My CV</a>
+            </div>
+        </section> 
+
+        </div>
+    </div>
+</main>
+
+<footer class='container'>
+    <a href="https://github.com/EnotPotaskyn" target="_blank">Visit my GitHub</a> 
+    <p>&#169;2022</p>
+    <a href="https://rs.school/js/" target="_blank">
+        <img src="https://rs.school/images/rs_school.svg" width="86" height="32" alt="RS School" /> 
+        </a> 
+</footer>
+
+<script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+<script src="script.js"></script>
+</body>
+
+</html>
